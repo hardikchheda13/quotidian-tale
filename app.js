@@ -11,15 +11,9 @@ app.use(bodyParser.json());
 var hbs = require('handlebars');
 //hardik chheddhahaa
 //hardik chheda new changes
-<<<<<<< HEAD
 //configRoutes(app);
-||||||| merged common ancestors
-//hardik new changes done jasmeet bhenchod
-configRoutes(app);
-=======
 //hardik new changes done jasmeet bhenchod
 //configRoutes(app);
->>>>>>> 666ed60a977f06a583c3a886c5afbce7195730d9
 //Jasmeet New changes done 
 app.listen(3000, () => {
     console.log("We've now got a server!");
