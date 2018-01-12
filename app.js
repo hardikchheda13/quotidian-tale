@@ -9,11 +9,7 @@ const static = express.static(__dirname + '/public');
 app.use("/public", static);
 app.use(bodyParser.json());
 var hbs = require('handlebars');
-hbs.registerHelper("concat", function(status)
-{
-    //console.log(status)
-    return "localhost:3000/restaurants/"+status
-});
+
 configRoutes(app);
 
 app.listen(3000, () => {
