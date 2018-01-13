@@ -32,13 +32,28 @@ const constructorMethod = (app) => {
         console.log(password)
          console.log('Calling Welcome page');
          
-         res.render('users/login');
+         try{
+             hash=await data.users.get_hashed_password(username)
+             console.log(hash)
+             if(bcrypt.compareSync(password, hash)) {
+                console.log("true") 
+                //req.session.userid=await data.users.get_id(username)
+                res.send("logged in successfully")
+             }
+             else{
+                 res.send("wrong password")
+             }
+         }
+         catch(e)
+         {
+             console.log("efsdg")
+             res.redirect("/?loginfailed=true")
+         }
              
        });
-
-       
-
-      
+    
+//********HARDIK SIGN UP********** 
+     
 app.get('/signup', async(req,res)=>{
     //console.log(data)
     res.render("users/signUp")
@@ -66,7 +81,7 @@ app.post('/signup', async(req, res) =>{
         
         var salt = bcrypt.genSaltSync(saltRounds);
         var hash = bcrypt.hashSync(password, salt);
-//CHanngeesssss
+        console.log("HASH PASS"+hash)
 const allOwners = await userData.username_exists(user_id);
 if(allOwners.status)
 {

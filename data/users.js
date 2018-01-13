@@ -3,7 +3,7 @@ const users = mongoCollections.users;
 const uuid = require("uuid");
 
 const exportedMethods  = {
-     async addUser(name, user_id, email, phone_number, type, hash)
+     async addUser(name, user_id, email, phone_number, hash)
     { 
         const userCollection =  await users(); 
         const newUser = {
