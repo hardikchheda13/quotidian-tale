@@ -2,9 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const Handlebars = require('handlebars');
-//const hbs =  require('handlebars');
+const hbs =  require('handlebars');
 const configRoutes = require("./routes");
-//const configRoutes = require("./routes");
+const configRoutes = require("./routes");
 console.log(configRoutes)
 const exphbs  = require('express-handlebars');
 /*
@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //var hbs = require('handlebars');
 
-//configRoutes(app);
+configRoutes(app);
 
 var hbs = require('handlebars');
 configRoutes(app);
