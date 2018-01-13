@@ -5,3 +5,7 @@ module.exports = {
      users: usersData
      //reviews: reviewsData
  };
+
+module.exports  ={
+    users: usersData
+}
