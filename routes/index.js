@@ -5,7 +5,12 @@ const userData = data.users;
 var session = require('express-session')
 
 //var bcrypt = require("bcrypt-nodejs");
-console.log("inside index")
+
+
+//const userData = data.users;
+const bodyParser = require("body-parser");
+var bcrypt = require("bcrypt-nodejs");
+
 const constructorMethod = (app) => {
     console.log("inside routes index")
     //app.use(cookieParser());
@@ -33,19 +38,7 @@ const constructorMethod = (app) => {
 
        
 
-       app.use("*", (req, res) => {
-        res.status(404).json("Not found");
-    })
-};
-
-module.exports = constructorMethod;
-
-
-const userData = data.users;
-const bodyParser = require("body-parser");
-var bcrypt = require("bcrypt-nodejs");
-
-const constructorMethod = (app) => {
+      
 app.get('/signup', async(req,res)=>{
     //console.log(data)
     res.render("users/signUp")

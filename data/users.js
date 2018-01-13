@@ -3,27 +3,11 @@ const users = mongoCollections.users;
 const uuid = require("uuid");
 
 const exportedMethods  = {
-async get_hashed_password(username) {
-    console.log(username)
-    const userCollection=await users()
-    let a= await userCollection.find({user_id:username},{password:1, _id:0}).toArray();
-    console.log(a)
-    console.log(a[0].password)
-    return a[0].password; 
- }
-}
-const mongoCollections = require("../config/mongoCollections");
-const users = mongoCollections.users;
-const uuid = require("uuid");
-
-
-const exportedMethods  = {
-    async addUser(name, user_id, email, phone_number, type, hash)
+     async addUser(name, user_id, email, phone_number, type, hash)
     { 
         const userCollection =  await users(); 
         const newUser = {
             _id: uuid.v4(),
-           
             name: name,
             user_id: user_id,
             email: email,
